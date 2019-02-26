@@ -15,7 +15,8 @@ let initialState = {
         }
     ],
     newText: "",
-    counter: 3
+    counter: 3,
+    newNotesArr: []
 };
 
 let TodoListReducer = (state = initialState, action) => {
@@ -42,6 +43,21 @@ let TodoListReducer = (state = initialState, action) => {
             }
 
             return state;
+        case "DELETE_NEW_NOTE":
+            for (let i = 0; i<state.newNotesArr.length; i++){
+                if (state.newNotesArr[i].id === action.id) {
+                    state.newNotesArr.splice(i, 1);
+                }
+            }
+            return state;
+        case "ADD_NOTE_TO_NEW_ARR":
+            for (let i = 0; i<state.notes.length; i++){
+                if (state.notes[i].id === action.id) {
+                    state.newNotesArr.push(state.notes[i]);
+                    state.notes.splice(i, 1);
+                }
+            }
+            return state;
         default:
             return state;
     }
@@ -63,6 +79,20 @@ export const addNewTextActionCreator = (text) => {
 export const deleteNoteActionCreator =(id) => {
     return {
         type: "DELETE_NOTE",
+        id: id
+    }
+};
+
+export const deleteNewNoteActionCreator =(id) => {
+    return {
+        type: "DELETE_NEW_NOTE",
+        id: id
+    }
+};
+
+export const addNoteToNewArrActionCreator = (id) => {
+    return {
+        type: "ADD_NOTE_TO_NEW_ARR",
         id: id
     }
 };

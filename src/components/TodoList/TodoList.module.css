@@ -17,8 +17,15 @@
     padding: 5px 10px;
     margin-top: 6px;
 }
-
+.notesBlock {
+    display: flex;
+    margin-top: 25px;
+    justify-content: space-between;
+}
 .notesList {
-    width: 50%;
-    margin: 25px 100px 0;
+    width: 49%;
+}
+
+.list {
+    width: 49%;
 }

@@ -1,8 +1,8 @@
 .item {
     padding: 5px 10px;
     margin: 0;
-    border: 1px solid #1a1740;
-    background-color: #b3b4dc;
+    border: 1px solid #000;
+    background-color: #dc6a64;
     margin-bottom: 10px;
     position: relative;
 }
@@ -10,14 +10,9 @@
 .buttonDelete {
     position: absolute;
     top: 3px;
-    right: 95px;
-}
-
-.button {
-    position: absolute;
-    top: 3px;
     right: 3px;
 }
+
 
 .text {
     font-style: italic;
